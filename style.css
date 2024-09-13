@@ -79,7 +79,6 @@ header {
 nav {
     position: relative;
     width: 100%;
-    display: none;
     text-align: center;
     box-shadow: 0 4px 8px var(--shadow-color);
     background-color: var(--primary-color);
@@ -98,6 +97,7 @@ nav ul {
 nav ul li {
     font-size: 1.2rem;
     margin: 0 15px;
+    padding: 5px;
 }
 
 nav ul li a {
@@ -117,13 +117,17 @@ nav ul li a:hover {
 
 .fixed-button {
     position: fixed;
-    bottom: 20px;
-    padding: 15px;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    bottom: 30px;
     border-radius: 50%;
     box-shadow: 0 4px 8px var(--shadow-color);
     color: var(--secondary-color);
     background-color: var(--accent-color);
-    font-size: 1.5em;
+    font-size: 2em;
     text-align: center;
     transition: background-color 0.3s ease, color 0.3s ease;
     z-index: 1000;
@@ -135,11 +139,19 @@ nav ul li a:hover {
 }
 
 .call-button {
-    left: 20px;
+    left: 30px;
 }
 
 .whatsapp-button {
-    right: 20px;
+    right: 30px;
+}
+.fixed-button span{
+    color: var(--text-color);
+    font-size: .7rem;
+    text-decoration: solid;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0 auto;
 }
 
 .title {
@@ -153,6 +165,9 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     .burger-menu {
         display: inline-block;
+    }
+    nav{
+        display: none;
     }
 
     nav.menu.active {

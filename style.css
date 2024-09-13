@@ -1,0 +1,186 @@
+:root {
+    --primary-color: #000000;  /* Negru */
+    --secondary-color: #eaebeb; /* Alb căpșună */
+    --accent-color: #00542e;    /* Roșu intens */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Umbre subtile */
+    --text-color: rgb(0, 0, 0);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--shadow-color);
+    color: var(--text-color);
+    max-width: 100%;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    padding: 25px;
+    background-image: url(img/wlwtrans.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: #00000083;
+    color: var(--secondary-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    height: 120px;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.title p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.burger-menu {
+    position: absolute;
+    display: inline-block;
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+    top: 15px;
+    right:4px;
+}
+
+.burger-menu span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    margin: 6px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.burger-menu span:active {
+    background-color: var(--accent-color);
+}
+
+.burger-menu.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+    background-color: var(--accent-color);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+    background-color: var(--accent-color);
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+    background-color: var(--accent-color);
+}
+
+nav {
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    display: none;
+    text-align: center;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    background-color: var(--primary-color);
+    z-index: 999;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    font-size: 1.2rem;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+/* Font Awesome CSS */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    color: var(--secondary-color);
+    background-color: var(--accent-color);
+    font-size: 1.5em;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 1000;
+}
+
+.fixed-button:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.call-button {
+    left: 20px;
+}
+
+.whatsapp-button {
+    right: 20px;
+}
+
+.title {
+    min-width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+.image-1{
+    max-width: 100%;
+}
+.image-1 img{
+    object-fit: contain;
+    width: 100%;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: inline-block;
+    }
+
+    nav.menu.active {
+        display: block;
+        position: absolute;
+        top: 145px;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        margin: 0 auto;
+        background-color: var(--accent-color);
+    }
+
+    .title h1 {
+        font-size: 1.5em;
+        color: var(--text-color);
+    }
+
+    .title p {
+        font-size: 1em;
+    }
+}

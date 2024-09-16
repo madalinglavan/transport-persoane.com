@@ -35,11 +35,15 @@ function toggleSubmenu(id) {
     const menuItem = document.getElementById(id);
     const submenu = menuItem.querySelector('.submenu');
 
-    // Închide toate submeniurile înainte de a deschide cel curent
-    closeAllSubmenus();
+    // Dacă submeniul curent este deja deschis, îl închidem
+    if (submenu.style.display === 'block') {
+        submenu.style.display = 'none';
+        menuItem.classList.remove('active'); // Resetează iconița
+    } else {
+        // Închide toate celelalte submeniuri înainte de a deschide cel curent
+        closeAllSubmenus();
 
-    // Afișează submeniul doar dacă era ascuns anterior
-    if (submenu.style.display === 'none') {
+        // Afișează submeniul curent
         submenu.style.display = 'block';
         menuItem.classList.add('active'); // Rotește iconița
     }
@@ -48,7 +52,7 @@ function toggleSubmenu(id) {
 // Adaugă evenimentele pentru toate secțiunile cu submeniuri
 ['transport-persoane', 'transport-colete', 'retele-sociale', 'contact'].forEach(id => {
     document.getElementById(id).addEventListener('click', function(event) {
-        toggleSubmenu(id); // Afișează submeniul selectat și închide restul
+        toggleSubmenu(id); // Afișează sau închide submeniul selectat
         event.stopPropagation(); // Previne închiderea meniului în afara secțiunii
         event.preventDefault();  // Previne navigarea accidentală
     });

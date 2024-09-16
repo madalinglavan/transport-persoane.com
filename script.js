@@ -12,9 +12,10 @@ burgerMenu.addEventListener('click', (event) => {
 
 // Close menu when clicking outside of the header
 document.addEventListener('click', (event) => {
-    if (!header.contains(event.target) && !event.target.closest('#transport-persoane')) {
+    if (!header.contains(event.target) && !event.target.closest('#burger-menu')) {
         menu.classList.remove('active');
         burgerMenu.classList.remove('active');
+        closeAllSubmenus();
     }
 });
 
@@ -73,11 +74,9 @@ submenuLinks.forEach(link => {
 
 // Închide meniul burger când se face clic în afara acestuia
 document.addEventListener('click', (event) => {
-    if (!header.contains(event.target)) {
+    if (!header.contains(event.target) && !event.target.closest('#burger-menu')) {
         menu.classList.remove('active');
         burgerMenu.classList.remove('active');
-        
-        // Ascunde toate submeniurile
         closeAllSubmenus();
     }
 });

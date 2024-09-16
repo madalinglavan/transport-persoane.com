@@ -6,10 +6,11 @@
     --text-color: rgb(38, 38, 38);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
+
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,8 +29,9 @@ header {
     height: 60px;
     background-color: var(--secondary-color);
 }
+
 .logo,
- .logo a{
+.logo a {
     display: flex;
     text-align: center;
     justify-items: center;
@@ -37,18 +39,21 @@ header {
     align-items: center;
     text-decoration: none;
 }
-.logo h1{
+
+.logo h1 {
     color: var(--text-color);
     font-family: "Fascinate Inline", system-ui;
     font-weight: 400;
     font-style: normal;
 }
-.logo h2{
+
+.logo h2 {
     color: var(--text-color);
     font-family: "Pacifico", cursive;
     font-weight: 400;
-    font-style:italic;
+    font-style: italic;
 }
+
 .title h1 {
     margin: 0;
     font-size: 2em;
@@ -61,12 +66,10 @@ header {
 
 .burger-menu {
     position: absolute;
-    display: inline-block;
-    display: none;
     cursor: pointer;
     z-index: 1000;
     top: 15px;
-    right:4px;
+    right: 4px;
 }
 
 .burger-menu span {
@@ -98,104 +101,70 @@ header {
     background-color: var(--accent-color);
 }
 
-nav {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 4px 8px var(--shadow-color);
+/* Stiluri pentru meniul lateral */
+nav.menu {
+    position: fixed; /* Fixează meniul pe ecran */
+    top: 0;
+    right: 0;
+    width: 250px; /* Lățimea meniului */
+    height: 100vh; /* Înălțimea completă a ecranului */
     background-color: var(--accent-color);
+    box-shadow: -2px 0 5px var(--shadow-color);
+    transform: translateX(100%); /* Poziționează meniul în afara ecranului */
+    transition: transform 0.3s ease; /* Tranziție pentru efectul de deschidere */
     z-index: 999;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* Stiluri când meniul este activ */
+nav.menu.active {
+    transform: translateX(0); /* Meniul se mișcă în ecran */
+}
+
+/* Stiluri pentru conținutul meniului */
+nav.menu ul {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    padding: 20px;
+    height: 100%;
+    margin-top: 60px; /* Spațiu sub header */
 }
 
-nav ul li {
-    font-size: 1.2rem;
-    margin: 0 15px;
-    padding: 5px;
+nav.menu ul li {
+    margin: 15px 0;
 }
 
-nav ul li a {
+nav.menu ul li a {
     color: var(--secondary-color);
-    text-decoration: none;
     font-weight: bold;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-}
-
-/* Font Awesome CSS */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-
-.fixed-button {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    bottom: 30px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px var(--shadow-color);
-    color: var(--secondary-color);
-    background-color: var(--accent-color);
-    font-size: 2em;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    z-index: 1000;
-}
-
-.fixed-button:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-}
-
-.call-button {
-    left: 30px;
-}
-
-.whatsapp-button {
-    right: 30px;
-}
-.fixed-button span{
-    color: var(--text-color);
-    font-size: .7rem;
-    text-decoration: solid;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin: 0 auto;
-}
-
-.title {
-    min-width: 100%;
-    justify-content: center;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
     text-align: center;
 }
-/* Ascunde submeniul implicit */
-.submenu {
+
+/* Stiluri pentru submeniu în meniul lateral */
+nav.menu ul .submenu {
     display: none;
-    list-style: none;
-    padding-left: 20px;
 }
 
-.submenu li {
-    padding: 5px 0;
+nav.menu ul li.active .submenu {
+    display: block;
 }
 
-#transport-persoane:hover .submenu {
-    display: block; /* Afișează submeniul când treci cu mouse-ul pe "Transport persoane" */
+/* Stiluri pentru iconița de submeniu */
+.submenu-icon {
+    margin-left: 10px;
+    font-size: 12px;
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
+
+/* Rotește iconița când submeniul este deschis */
+nav.menu ul li.active .submenu-icon {
+    transform: rotate(180deg);
+}
+
 /* Stiluri generale pentru meniu */
 #menu ul {
     list-style: none;
@@ -272,13 +241,54 @@ nav ul li a:hover {
     transform: rotate(180deg);
 }
 
+/* Font Awesome CSS */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+.fixed-button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    bottom: 30px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    color: var(--secondary-color);
+    background-color: var(--accent-color);
+    font-size: 2em;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 1000;
+}
+
+.fixed-button:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.call-button {
+    left: 30px;
+}
+
+.whatsapp-button {
+    right: 30px;
+}
+.fixed-button span{
+    color: var(--text-color);
+    font-size: .7rem;
+    text-decoration: solid;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
 
 /* Responsive Styling */
 @media (max-width: 768px) {
     .burger-menu {
         display: inline-block;
     }
-    nav{
+    nav {
         display: none;
     }
 

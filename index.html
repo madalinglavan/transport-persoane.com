@@ -18,52 +18,70 @@
           "availableLanguage": ["ro", "en"],
           "url": "https://transportpersoane-europa.ro"
         }
-        </script>
-        
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <div class="logo">
+            <a href="index.html">
+                <h1>WLW</h1>
+                <h2>Trans</h2>
+            </a>
+        </div>
         <div class="burger-menu" id="burger-menu">
             <span></span>
             <span></span>
             <span></span>
         </div>
-    
-        
-        
     </header>
     <nav id="menu" class="menu">
         <ul>
             <li><a href="index.html">Acasă</a></li>
-            <li><a href="#">Servicii</a></li>
-            <li><a href="#">Rute</a></li>
-            <li><a href="#">Contact</a></li>
+            <li id="transport-persoane">
+                <a href="#">Transport persoane <span class="submenu-icon">▼</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Transport România-Ungaria</a></li>
+                    <li><a href="#">Transport România-Austria</a></li>
+                    <li><a href="#">Transport România-Germania</a></li>
+                    <li><a href="#">Transport România-Belgia</a></li>
+                    <li><a href="#">Transport România-Olanda</a></li>
+                </ul>
+            </li>
+            <li id="transport-colete">
+                <a href="#">Transport colete <span class="submenu-icon">▼</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Transport colete în Ungaria</a></li>
+                    <li><a href="#">Transport colete în Austria</a></li>
+                    <li><a href="#">Transport colete în Germania</a></li>
+                    <li><a href="#">Transport colete în Belgia</a></li>
+                    <li><a href="#">Transport colete în Olanda</a></li>
+                </ul>
+            </li>
+            <li id="retele-sociale">
+                <a href="#">Rețele sociale <span class="submenu-icon">▼</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">TikTok</a></li>
+                </ul>
+            </li>
+            <li id="contact">
+                <a href="#">Contact <span class="submenu-icon">▼</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Apelează</a></li>
+                    <li><a href="#">Trimite mesaj WhatsApp</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
+    
+    
     <div class="title">
         <h1>Transport Persoane Europa</h1>
         <p>Romania, Ungaria, Austria, Germania, Belgia, Olanda</p>
     </div>
-
-    <div class="container">
-        <!-- Section One -->
-        <section class="section section-one">
-            <h2>Secțiunea 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius orci nec ullamcorper facilisis. Sed aliquet sollicitudin massa in fringilla.</p>
-        </section>
-
-        <!-- Section Two -->
-        <section class="section section-two">
-            <h2>Secțiunea 2</h2>
-            <div class="content">
-                <div class="post">Postare informativă 1</div>
-                <div class="post">Postare informativă 2</div>
-                <div class="ad">Reclamă</div>
-            </div>
-        </section>
-    </div>
-
-
 
     <!-- Call Button -->
     <a href="tel:+40774537259" class="fixed-button call-button">

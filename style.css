@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #000000;  /* Negru */
-    --secondary-color: #eaebeb; /* Alb căpșună */
+    --primary-color: #f7f7f7;  /* Negru */
+    --secondary-color: #ffffff; /* Alb căpșună */
     --accent-color: #00542e;    /* Roșu intens */
     --shadow-color: rgba(0, 0, 0, 0.1); /* Umbre subtile */
-    --text-color: rgb(0, 0, 0);
+    --text-color: rgb(38, 38, 38);
 }
 
 *{
@@ -20,18 +20,35 @@ body {
 }
 
 header {
+    display: flex;
     position: relative;
     text-align: center;
-    padding: 25px;
-    background-image: url(img/wlwtrans.jpg);
-    background-position: center;
-    background-size: cover;
-    background-color: #00000083;
     color: var(--secondary-color);
     box-shadow: 0 4px 8px var(--shadow-color);
-    height: 120px;
+    height: 60px;
+    background-color: var(--secondary-color);
 }
-
+.logo,
+ .logo a{
+    display: flex;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.logo h1{
+    color: var(--text-color);
+    font-family: "Fascinate Inline", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+.logo h2{
+    color: var(--text-color);
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style:italic;
+}
 .title h1 {
     margin: 0;
     font-size: 2em;
@@ -54,10 +71,10 @@ header {
 
 .burger-menu span {
     display: block;
-    width: 35px;
+    width: 30px;
     height: 4px;
-    background-color: var(--secondary-color);
-    margin: 6px 0;
+    background-color: var(--accent-color);
+    margin: 5px 0;
     transition: all 0.3s ease;
     border-radius: 2px;
 }
@@ -86,7 +103,7 @@ nav {
     width: 100%;
     text-align: center;
     box-shadow: 0 4px 8px var(--shadow-color);
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     z-index: 999;
 }
 
@@ -95,6 +112,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -164,49 +182,96 @@ nav ul li a:hover {
     justify-content: center;
     text-align: center;
 }
-.container {
-    display: flex;
-    width: 200%; /* Ambele secțiuni una lângă alta */
-    transition: transform 0.8s ease-in-out; /* Tranziție lină */
-    touch-action: pan-y; /* Permite swipe doar pe axa X */
-}
-
-.section {
-    width: 50%;
-    height: 70vh;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* Stiluri pentru secțiunea 1 */
-.section-one {
-    background-color: #3498db;
-    color: white;
-}
-
-/* Stiluri pentru secțiunea 2 */
-.section-two {
-    background-color: #e74c3c;
-    color: white;
-}
-
-/* Efecte de tranziție */
-.container.scroll-right {
-    transform: translateX(-50%);
-}
-
-.container.scroll-left {
-    transform: translateX(0);
-}
-
-/* Ascunderea scrollbar-ului */
-body::-webkit-scrollbar {
+/* Ascunde submeniul implicit */
+.submenu {
     display: none;
+    list-style: none;
+    padding-left: 20px;
 }
+
+.submenu li {
+    padding: 5px 0;
+}
+
+#transport-persoane:hover .submenu {
+    display: block; /* Afișează submeniul când treci cu mouse-ul pe "Transport persoane" */
+}
+/* Stiluri generale pentru meniu */
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+}
+
+#menu li {
+    position: relative;
+    display: inline-block;
+}
+
+#menu a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    background-color: #333;
+}
+
+#menu a:hover {
+    background-color: #444;
+}
+
+/* Submeniu ascuns implicit */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+.submenu li {
+    width: 200px;
+}
+
+.submenu li a {
+    padding: 10px;
+    background-color: #444;
+    color: white;
+}
+
+.submenu li a:hover {
+    background-color: #555;
+}
+
+/* Afișează submeniul când este activ */
+#transport-persoane:hover .submenu,
+#transport-colete:hover .submenu,
+#retele-sociale:hover .submenu,
+#contact:hover .submenu {
+    display: block;
+}
+
+/* Stil pentru iconița de submeniu */
+.submenu-icon {
+    margin-left: 10px;
+    font-size: 12px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Rotește iconița când submeniul este deschis */
+#transport-persoane:hover .submenu-icon,
+#transport-colete:hover .submenu-icon,
+#retele-sociale:hover .submenu-icon,
+#contact:hover .submenu-icon {
+    transform: rotate(180deg);
+}
+
 
 /* Responsive Styling */
 @media (max-width: 768px) {
@@ -226,7 +291,6 @@ body::-webkit-scrollbar {
         align-items: center;
         left: 0;
         margin: 0 auto;
-        background-color: var(--accent-color);
     }
 
     .title h1 {

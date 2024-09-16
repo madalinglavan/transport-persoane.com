@@ -1,4 +1,4 @@
-//burger menu
+// Burger menu
 const burgerMenu = document.getElementById('burger-menu');
 const menu = document.getElementById('menu');
 const header = document.querySelector('header');
@@ -12,38 +12,68 @@ burgerMenu.addEventListener('click', (event) => {
 
 // Close menu when clicking outside of the header
 document.addEventListener('click', (event) => {
-    if (!header.contains(event.target)) {
+    if (!header.contains(event.target) && !event.target.closest('#transport-persoane')) {
         menu.classList.remove('active');
         burgerMenu.classList.remove('active');
     }
 });
 
-//sectiuni
-let currentSection = 1;
-let startX = 0;
-let endX = 0;
+// Funcție pentru a închide toate submeniurile
+function closeAllSubmenus() {
+    document.querySelectorAll('.submenu').forEach(submenu => {
+        submenu.style.display = 'none'; // Ascunde toate submeniurile
+    });
 
-const container = document.querySelector('.container');
+    // Elimină clasa 'active' de la toate meniurile
+    document.querySelectorAll('.menu li').forEach(menuItem => {
+        menuItem.classList.remove('active');
+    });
+}
 
-// Detectează începutul swipe-ului
-document.addEventListener('touchstart', (event) => {
-    startX = event.touches[0].clientX;
+// Funcție pentru a controla deschiderea și închiderea submeniurilor
+function toggleSubmenu(id) {
+    const menuItem = document.getElementById(id);
+    const submenu = menuItem.querySelector('.submenu');
+
+    // Închide toate submeniurile înainte de a deschide cel curent
+    closeAllSubmenus();
+
+    // Afișează submeniul doar dacă era ascuns anterior
+    if (submenu.style.display === 'none') {
+        submenu.style.display = 'block';
+        menuItem.classList.add('active'); // Rotește iconița
+    }
+}
+
+// Adaugă evenimentele pentru toate secțiunile cu submeniuri
+['transport-persoane', 'transport-colete', 'retele-sociale', 'contact'].forEach(id => {
+    document.getElementById(id).addEventListener('click', function(event) {
+        toggleSubmenu(id); // Afișează submeniul selectat și închide restul
+        event.stopPropagation(); // Previne închiderea meniului în afara secțiunii
+        event.preventDefault();  // Previne navigarea accidentală
+    });
 });
 
-// Detectează sfârșitul swipe-ului și efectuează tranziția
-document.addEventListener('touchend', (event) => {
-    endX = event.changedTouches[0].clientX;
+// Închide meniul burger și submeniurile atunci când este selectat un link din submeniuri
+const submenuLinks = document.querySelectorAll('.submenu li a');
+submenuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        // Închide meniul burger
+        menu.classList.remove('active');
+        burgerMenu.classList.remove('active');
+        
+        // Ascunde toate submeniurile
+        closeAllSubmenus();
+    });
+});
 
-    // Detectează dacă swipe-ul este de la dreapta la stânga sau invers
-    if (startX > endX + 50) {
-        // Scroll dreapta
-        currentSection = (currentSection === 1) ? 2 : 1;
-        container.classList.toggle('scroll-right', currentSection === 2);
-        container.classList.toggle('scroll-left', currentSection === 1);
-    } else if (startX < endX - 50) {
-        // Scroll stânga
-        currentSection = (currentSection === 1) ? 2 : 1;
-        container.classList.toggle('scroll-right', currentSection === 2);
-        container.classList.toggle('scroll-left', currentSection === 1);
+// Închide meniul burger când se face clic în afara acestuia
+document.addEventListener('click', (event) => {
+    if (!header.contains(event.target)) {
+        menu.classList.remove('active');
+        burgerMenu.classList.remove('active');
+        
+        // Ascunde toate submeniurile
+        closeAllSubmenus();
     }
 });

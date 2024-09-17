@@ -199,29 +199,32 @@ nav.menu ul li.active .submenu-icon {
 
 /* Submeniu ascuns implicit */
 .submenu {
-    display: none;
     position: relative;
-    background-color: #444;
+    background-color: #b0b0b0;
     list-style: none;
     padding: 0;
     margin: 0;
-    top: 100%;
     left: 0;
     z-index: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 .submenu li {
-    width: 200px;
+
 }
 
 .submenu li a {
-    padding: 10px;
     background-color: #444;
     color: white;
+    font-size: .7rem;
+
 }
 
 .submenu li a:hover {
-    background-color: #555;
+    background-color: #ff0000;
 }
 
 /* Afișează submeniul când este activ */

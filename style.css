@@ -1,7 +1,7 @@
 :root {
     --primary-color: #f7f7f7;  /* Negru */
     --secondary-color: #ffffff; /* Alb căpșună */
-    --accent-color: #f3ae01;    /* Roșu intens */
+    --accent-color: #000000;    /* Roșu intens */
     --shadow-color: rgba(0, 0, 0, 0.1); /* Umbre subtile */
     --text-color: rgb(38, 38, 38);
 }
@@ -15,6 +15,7 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--shadow-color);
+    min-height: 100vh;
 }
 
 header {
@@ -60,7 +61,16 @@ header {
     font-style: italic;
     font-size: .9rem;
 }
-
+.motto{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-left: 30px;
+}
+.motto{
+    color: var(--text-color);
+}
 .title{
     text-align: center;
 }
@@ -134,7 +144,7 @@ nav.menu.active {
 nav.menu ul {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     padding: 20px;
     height: 100%;
     margin-top: 60px; /* Spațiu sub header */
@@ -149,8 +159,8 @@ nav.menu ul li a {
     font-weight: bold;
     text-decoration: none;
     padding: 15px;
-    display: block;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Stiluri pentru submeniu în meniul lateral */

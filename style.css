@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #f7f7f7;  /* Negru */
-    --secondary-color: #ffffff; /* Alb căpșună */
-    --accent-color: #000000;    /* Roșu intens */
-    --shadow-color: rgba(0, 0, 0, 0.1); /* Umbre subtile */
+    --primary-color: #f7f7f7;  
+    --secondary-color: #ffffff; 
+    --accent-color: #000000;    
+    --shadow-color: rgba(0, 0, 0, 0.1); 
     --text-color: rgb(38, 38, 38);
 }
 
@@ -13,21 +13,32 @@
 
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--shadow-color);
-    min-height: 100vh;
 }
 
 header {
     display: flex;
+    flex-direction: column;
     position: relative;
     text-align: center;
     color: var(--secondary-color);
     box-shadow: 0 4px 8px var(--shadow-color);
-    height: 80px;
+    height: 90px;
     background-color: var(--secondary-color);
 }
-
+.top-header{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+}
+.bottom-header p{
+    color: #000000;
+    font-size:.8rem;
+    margin-top: 10px;
+}
 .logo {
     display: flex;
     text-align: center;
@@ -52,6 +63,7 @@ header {
     font-weight: 400;
     font-style: normal;
     font-size: 2rem;
+    text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.561);
 }
 
 .logo h2 {
@@ -67,29 +79,25 @@ header {
     justify-items: center;
     align-items: center;
     margin-left: 30px;
-}
-.motto{
     color: var(--text-color);
+    font-family: "Sofadi One", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
-.title{
-    text-align: center;
-}
-.title h1 {
-    margin: 0;
-    font-size: 2em;
+.motto span{
+    font-size: 1rem;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.title p {
-    margin: 0;
-    font-size: 1.2em;
-}
 
 .burger-menu {
     position: absolute;
     cursor: pointer;
     z-index: 1000;
-    top: 15px;
-    right: 4px;
+    top: 25px;
+    right: 15px;
 }
 
 .burger-menu span {
@@ -124,7 +132,7 @@ header {
 /* Stiluri pentru meniul lateral */
 nav.menu {
     position: fixed; /* Fixează meniul pe ecran */
-    top: 0;
+    top: 90px;
     right: 0;
     width: 250px; /* Lățimea meniului */
     height: 100vh; /* Înălțimea completă a ecranului */
@@ -144,14 +152,13 @@ nav.menu.active {
 nav.menu ul {
     display: flex;
     flex-direction: column;
-    align-items: start;
     padding: 20px;
     height: 100%;
     margin-top: 60px; /* Spațiu sub header */
 }
 
 nav.menu ul li {
-    margin: 15px 0;
+    margin: 1px 0;
 }
 
 nav.menu ul li a {
@@ -178,6 +185,7 @@ nav.menu ul li.active .submenu {
     font-size: 12px;
     display: inline-block;
     transition: transform 0.3s ease;
+    color: var(--accent-color);
 }
 
 /* Rotește iconița când submeniul este deschis */
@@ -203,7 +211,7 @@ nav.menu ul li.active .submenu-icon {
     color: white;
     padding: 15px 20px;
     display: block;
-    background-color: #333;
+
 }
 
 #menu a:hover {
@@ -219,16 +227,16 @@ nav.menu ul li.active .submenu-icon {
     margin: 0;
     left: 0;
     z-index: 1;
-    text-align: center;
+    text-align: start;
    
 }
 
 .submenu li {
-
+    display: flex;
+    flex-direction: column;
 }
 
 .submenu li a {
-    background-color: #dd0000;
     color: white;
     font-size: .9rem;
     display: flex;
@@ -249,15 +257,9 @@ nav.menu ul li.active .submenu-icon {
     transition: transform 0.3s ease;
 }
 
-/* Rotește iconița când submeniul este deschis */
-#transport-persoane:hover .submenu-icon,
-#transport-colete:hover .submenu-icon,
-#retele-sociale:hover .submenu-icon,
-#contact:hover .submenu-icon {
-    transform: rotate(180deg);
-}
+
 .submenu li a img{
-    width: 24px;
+    width: 18px;
     color: #fff
 }
 
@@ -330,5 +332,10 @@ nav.menu ul li.active .submenu-icon {
 
     .title p {
         font-size: 1em;
+    }
+    nav.menu {
+        position: relative; /* Fixează meniul pe ecran */
+        top: 0px;
+
     }
 }

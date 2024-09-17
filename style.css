@@ -61,6 +61,9 @@ header {
     font-size: .9rem;
 }
 
+.title{
+    text-align: center;
+}
 .title h1 {
     margin: 0;
     font-size: 2em;
@@ -206,10 +209,8 @@ nav.menu ul li.active .submenu-icon {
     margin: 0;
     left: 0;
     z-index: 1;
-    flex-wrap: wrap;
-    justify-content: center;
     text-align: center;
-    align-items: center;
+   
 }
 
 .submenu li {
@@ -217,23 +218,18 @@ nav.menu ul li.active .submenu-icon {
 }
 
 .submenu li a {
-    background-color: #444;
+    background-color: #dd0000;
     color: white;
-    font-size: .7rem;
-
+    font-size: .9rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .submenu li a:hover {
     background-color: #ff0000;
 }
 
-/* Afișează submeniul când este activ */
-#transport-persoane:hover .submenu,
-#transport-colete:hover .submenu,
-#retele-sociale:hover .submenu,
-#contact:hover .submenu {
-    display: block;
-}
+
 
 /* Stil pentru iconița de submeniu */
 .submenu-icon {
@@ -249,6 +245,10 @@ nav.menu ul li.active .submenu-icon {
 #retele-sociale:hover .submenu-icon,
 #contact:hover .submenu-icon {
     transform: rotate(180deg);
+}
+.submenu li a img{
+    width: 24px;
+    color: #fff
 }
 
 /* Font Awesome CSS */

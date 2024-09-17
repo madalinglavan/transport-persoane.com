@@ -80,3 +80,25 @@ document.addEventListener('click', (event) => {
         closeAllSubmenus();
     }
 });
+
+// Selectează toate elementele care au submeniu
+document.querySelectorAll('#menu li').forEach(function(menuItem) {
+    menuItem.addEventListener('click', function() {
+        // Închide alte submeniuri
+        document.querySelectorAll('#menu li').forEach(function(item) {
+            if (item !== menuItem) {
+                item.classList.remove('open');
+            }
+        });
+
+        // Toggle pentru deschiderea/închiderea submeniului curent
+        menuItem.classList.toggle('open');
+    });
+});
+
+// Previne propagarea click-ului pe linkurile din submeniu
+document.querySelectorAll('.submenu a').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        event.stopPropagation();  // Oprește propagarea evenimentului
+    });
+});

@@ -234,13 +234,18 @@ nav.menu ul li.active .submenu-icon {
 .submenu li {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    text-align: center;
 }
 
 .submenu li a {
     color: white;
-    font-size: .9rem;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
+    font-family: sans-serif;
+    font-weight: 400;
+    
 }
 
 .submenu li a:hover {
@@ -304,6 +309,10 @@ nav.menu ul li.active .submenu-icon {
     text-transform: uppercase;
     margin: 0 auto;
 }
+#transport-persoane, #transport-colete, #retele-sociale, #contact{
+    display: flex;
+    flex-direction: column;
+}
 
 /* Responsive Styling */
 @media (max-width: 768px) {
@@ -338,4 +347,5 @@ nav.menu ul li.active .submenu-icon {
         top: 0px;
 
     }
+
 }

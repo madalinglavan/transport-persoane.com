@@ -1,7 +1,7 @@
 :root {
     --primary-color: #f7f7f7;  /* Negru */
     --secondary-color: #ffffff; /* Alb căpșună */
-    --accent-color: #00542e;    /* Roșu intens */
+    --accent-color: #f3ae01;    /* Roșu intens */
     --shadow-color: rgba(0, 0, 0, 0.1); /* Umbre subtile */
     --text-color: rgb(38, 38, 38);
 }
@@ -15,9 +15,6 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--shadow-color);
-    color: var(--text-color);
-    max-width: 100%;
-    overflow-y: hidden;
 }
 
 header {
@@ -26,12 +23,11 @@ header {
     text-align: center;
     color: var(--secondary-color);
     box-shadow: 0 4px 8px var(--shadow-color);
-    height: 60px;
+    height: 80px;
     background-color: var(--secondary-color);
 }
 
-.logo,
-.logo a {
+.logo {
     display: flex;
     text-align: center;
     justify-items: center;
@@ -39,12 +35,22 @@ header {
     align-items: center;
     text-decoration: none;
 }
+.logo a{
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    text-decoration: none;
+    margin-left: 20px;
+}
 
 .logo h1 {
     color: var(--text-color);
     font-family: "Fascinate Inline", system-ui;
     font-weight: 400;
     font-style: normal;
+    font-size: 2rem;
 }
 
 .logo h2 {
@@ -52,6 +58,7 @@ header {
     font-family: "Pacifico", cursive;
     font-weight: 400;
     font-style: italic;
+    font-size: .9rem;
 }
 
 .title h1 {
@@ -193,7 +200,7 @@ nav.menu ul li.active .submenu-icon {
 /* Submeniu ascuns implicit */
 .submenu {
     display: none;
-    position: absolute;
+    position: relative;
     background-color: #444;
     list-style: none;
     padding: 0;

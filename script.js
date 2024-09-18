@@ -102,3 +102,11 @@ document.querySelectorAll('.submenu a').forEach(function(link) {
         event.stopPropagation();  // Oprește propagarea evenimentului
     });
 });
+
+
+document.querySelectorAll('.rezerva-button').forEach(button => {
+    button.addEventListener('click', function() {
+      window.location.href = "tel:+40774537259";  // Inițiază apelul către numărul de telefon
+    });
+  });
+  

@@ -1,10 +1,37 @@
 :root {
-    --primary-color: #f7f7f7;  
-    --secondary-color: #ffffff; 
-    --accent-color: #000000;    
-    --shadow-color: rgba(0, 0, 0, 0.1); 
-    --text-color: rgb(38, 38, 38);
+    /* Colors */
+    --primary-color: #000000;  /* Main background or dominant elements */
+    --secondary-color: #ffffff;  /* Text or secondary elements */
+    --accent-color: #c5c5c5;    /* Borders, subtle accents */
+    --shadow-color: rgba(0, 0, 0, 0.7); /* Softer shadow for depth */
+    --text-color: rgb(39, 39, 39); /* Primary text color */
+    --text-secondary-color: #666666; /* Subtle, secondary text */
+    
+    /* Hover and Active */
+    --hover-primary-color: #333333; /* For interactive elements */
+    --hover-secondary-color: #f0f0f0;
+    --hover-accent-color: #a1a1a1; /* Accent change on hover */
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(45deg, #000000, #333333);
+    --gradient-accent: linear-gradient(45deg, #c5c5c5, #e0e0e0);
+
+    /* Typography */
+    --font-main: 'Roboto', sans-serif;  /* Professional, clean font */
+    --font-size-base: 16px;
+    --font-size-large: 20px;
+    --font-size-small: 14px;
+    
+    /* Spacing */
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
+
+    /* Borders */
+    --border-radius: 8px;  /* Consistent, subtle rounded corners */
+    --border-color: #e0e0e0;
 }
+
 
 * {
     margin: 0;
@@ -15,7 +42,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--shadow-color);
+    color: var(--text-color);
 }
 
 header {
@@ -23,21 +50,21 @@ header {
     flex-direction: column;
     position: relative;
     text-align: center;
-    color: var(--secondary-color);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
     box-shadow: 0 4px 8px var(--shadow-color);
-    height: 90px;
-    background-color: var(--secondary-color);
+    height: 100px;
 }
 .top-header{
     display: flex;
     align-items: center;
     text-align: center;
     margin-top: 10px;
+    padding: 5px;
 }
 .bottom-header p{
-    color: #000000;
-    font-size:.8rem;
-    margin-top: 10px;
+    font-size:1rem;
 }
 .logo {
     display: flex;
@@ -54,11 +81,9 @@ header {
     align-items: center;
     line-height: 1;
     text-decoration: none;
-    margin-left: 20px;
 }
 
 .logo h1 {
-    color: var(--text-color);
     font-family: "Fascinate Inline", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -67,7 +92,6 @@ header {
 }
 
 .logo h2 {
-    color: var(--text-color);
     font-family: "Pacifico", cursive;
     font-weight: 400;
     font-style: italic;
@@ -79,10 +103,6 @@ header {
     justify-items: center;
     align-items: center;
     margin-left: 30px;
-    color: var(--text-color);
-    font-family: "Sofadi One", system-ui;
-    font-weight: 400;
-    font-style: normal;
 }
 .motto span{
     font-size: 1rem;
@@ -104,39 +124,35 @@ header {
     display: block;
     width: 30px;
     height: 4px;
-    background-color: var(--accent-color);
+    background-color: var(--text-color);
     margin: 5px 0;
     transition: all 0.3s ease;
     border-radius: 2px;
 }
 
 .burger-menu span:active {
-    background-color: var(--accent-color);
+    
 }
 
 .burger-menu.active span:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
-    background-color: var(--accent-color);
 }
 
 .burger-menu.active span:nth-child(2) {
     opacity: 0;
-    background-color: var(--accent-color);
 }
 
 .burger-menu.active span:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
-    background-color: var(--accent-color);
 }
 
 /* Stiluri pentru meniul lateral */
 nav.menu {
     position: fixed; /* Fixează meniul pe ecran */
-    top: 90px;
+    top: 100px;
     right: 0;
-    width: 250px; /* Lățimea meniului */
+    width: 400px; /* Lățimea meniului */
     height: 100vh; /* Înălțimea completă a ecranului */
-    background-color: var(--accent-color);
     box-shadow: -2px 0 5px var(--shadow-color);
     transform: translateX(100%); /* Poziționează meniul în afara ecranului */
     transition: transform 0.3s ease; /* Tranziție pentru efectul de deschidere */
@@ -152,22 +168,21 @@ nav.menu.active {
 nav.menu ul {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    justify-content: safe;
     height: 100%;
     margin-top: 60px; /* Spațiu sub header */
 }
 
 nav.menu ul li {
-    margin: 1px 0;
+    margin-top: 2px;
+    box-shadow: 0px 0px 1px rgb(0, 0, 0);
+    text-align: start;
 }
 
 nav.menu ul li a {
-    color: var(--secondary-color);
     font-weight: bold;
     text-decoration: none;
     padding: 15px;
-    display: flex;
-    flex-direction: column;
 }
 
 /* Stiluri pentru submeniu în meniul lateral */
@@ -175,17 +190,13 @@ nav.menu ul .submenu {
     display: none;
 }
 
-nav.menu ul li.active .submenu {
-    display: block;
-}
+
 
 /* Stiluri pentru iconița de submeniu */
 .submenu-icon {
-    margin-left: 10px;
     font-size: 12px;
     display: inline-block;
     transition: transform 0.3s ease;
-    color: var(--accent-color);
 }
 
 /* Rotește iconița când submeniul este deschis */
@@ -198,7 +209,6 @@ nav.menu ul li.active .submenu-icon {
     list-style: none;
     padding: 0;
     margin: 0;
-    background-color: #333;
 }
 
 #menu li {
@@ -208,20 +218,18 @@ nav.menu ul li.active .submenu-icon {
 
 #menu a {
     text-decoration: none;
-    color: white;
     padding: 15px 20px;
     display: block;
 
 }
 
 #menu a:hover {
-    background-color: #444;
+
 }
 
 /* Submeniu ascuns implicit */
 .submenu {
     position: relative;
-    background-color: #b0b0b0;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -239,17 +247,9 @@ nav.menu ul li.active .submenu-icon {
 }
 
 .submenu li a {
-    color: white;
     font-size: 1rem;
     display: flex;
     flex-direction: column;
-    font-family: sans-serif;
-    font-weight: 400;
-    
-}
-
-.submenu li a:hover {
-    background-color: #ff0000;
 }
 
 
@@ -265,54 +265,54 @@ nav.menu ul li.active .submenu-icon {
 
 .submenu li a img{
     width: 18px;
-    color: #fff
 }
-
-/* Font Awesome CSS */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-
-.fixed-button {
-    position: absolute;
-    width: 50px;
-    height: 50px;
+/* Footer fixat */
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
     justify-content: center;
+    gap: 20px;
+    z-index: 1000; /* Asigură-te că este deasupra altor elemente */
+}
+
+.fixed-footer a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
     align-items: center;
-    text-align: center;
-    bottom: 30px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px var(--shadow-color);
-    color: var(--secondary-color);
-    background-color: var(--accent-color);
-    font-size: 2em;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    z-index: 1000;
+    gap: 10px;
+    transition: background-color 0.3s ease;
 }
 
-.fixed-button:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
+.call-button{
+    background-color: #00aaff;
+}
+.call-button:hover{
+    background-color: #2e4bcf;
 }
 
-.call-button {
-    left: 30px;
+.fixed-footer a i {
+    font-size: 18px;
 }
 
+/* Butonul de WhatsApp */
 .whatsapp-button {
-    right: 30px;
+    background-color: #25D366; /* Verde pentru WhatsApp */
 }
-.fixed-button span{
-    color: var(--text-color);
-    font-size: .7rem;
-    text-decoration: solid;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin: 0 auto;
+
+.whatsapp-button:hover {
+    background-color: #128C7E; /* O nuanță mai închisă la hover */
 }
+
 #transport-persoane, #transport-colete, #retele-sociale, #contact{
     display: flex;
     flex-direction: column;
 }
+
 
 /* Responsive Styling */
 @media (max-width: 768px) {
@@ -336,7 +336,6 @@ nav.menu ul li.active .submenu-icon {
 
     .title h1 {
         font-size: 1.5em;
-        color: var(--text-color);
     }
 
     .title p {

@@ -6,6 +6,7 @@
     --shadow-color: rgba(0, 0, 0, 0.7); /* Softer shadow for depth */
     --text-color: rgb(39, 39, 39); /* Primary text color */
     --text-secondary-color: #666666; /* Subtle, secondary text */
+    --button-color: rgb(255, 162, 0);
     
     /* Hover and Active */
     --hover-primary-color: #333333; /* For interactive elements */
@@ -43,7 +44,7 @@ body {
     padding: 0;
     font-family: var(--font-main);
     color: var(--text-color);
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 header {
@@ -304,18 +305,27 @@ nav.menu ul li.active .submenu-icon {
     flex-direction: column;
 }
 
-.ads{
-    width: 100%;
+.ads {
+    display: flex;
+    align-items: center; /* Centrează elementele orizontal */
+    justify-content: center; /* Centrează elementele vertical */
+    padding: 20px; /* Adaugă padding pentru mai mult spațiu */
+    box-sizing: border-box; /* Include padding și border în dimensiunea totală */
 }
-.ads img{
-    width: 100%;
+
+
+.ads img {
+    max-width: 33%; /* Ajustează lățimea imaginilor pentru a se potrivi bine */
+    height: auto; /* Menține proporțiile imaginilor */
+    margin-bottom: 20px; /* Adaugă un spațiu între imagini */
 }
+
 
 #rute {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
+    padding: 10px;
   }
   
   .ruta {
@@ -331,11 +341,21 @@ nav.menu ul li.active .submenu-icon {
   .ruta h3 {
     color: var(--primary-color);
     font-family: var(--font-main);
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .ruta h4{
+    color: var(--button-color);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    margin-bottom: 10px;
   }
   
   .ruta p {
     color: var(--text-secondary-color);
     margin-bottom: var(--spacing-medium);
+    text-align: start;
+    font-size: 1rem;
   }
   
   .buton-container {
@@ -343,12 +363,15 @@ nav.menu ul li.active .submenu-icon {
   }
   
   .rezerva-button {
-    background-color: var(--accent-color);
+    background-color: var(--button-color);
     color: var(--primary-color);
     border: none;
     padding: 10px 20px;
     border-radius: var(--border-radius);
     cursor: pointer;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 20px;
   }
   
   .rezerva-button:hover {
@@ -449,4 +472,5 @@ nav.menu ul li.active .submenu-icon {
         text-align: center;
         margin: 10px;
       }
+
 }

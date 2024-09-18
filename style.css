@@ -255,8 +255,7 @@ nav.menu ul li.active .submenu-icon {
     padding: var(--spacing-small) 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    background-color: var(--primary-color);
+    gap: 80px;
     color: var(--secondary-color);
     z-index: 1000;
 }
@@ -344,6 +343,9 @@ nav.menu ul li.active .submenu-icon {
         font-size: 1rem;
     }
     .bottom-header p{
+        font-size: .8rem;
+    }
+    .submenu li a {
         font-size: .8rem;
     }
 }

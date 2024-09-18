@@ -1,6 +1,6 @@
 :root {
     /* Colors */
-    --primary-color: #000000;  /* Main background or dominant elements */
+    --primary-color: #2c2c2c;  /* Main background or dominant elements */
     --secondary-color: #ffffff;  /* Text or secondary elements */
     --accent-color: #c5c5c5;    /* Borders, subtle accents */
     --shadow-color: rgba(0, 0, 0, 0.7); /* Softer shadow for depth */
@@ -18,7 +18,7 @@
 
     /* Typography */
     --font-main: 'Roboto', sans-serif;  /* Professional, clean font */
-    --font-size-base: 16px;
+    --font-size-base: 1rem;
     --font-size-large: 20px;
     --font-size-small: 14px;
     
@@ -51,24 +51,27 @@ header {
     flex-direction: column;
     position: relative;
     text-align: center;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 8px var(--shadow-color);
-    height: 100px;
+    height: 150px;
+    width: 100%;
     background-color: var(--primary-color);
     color: var(--secondary-color);
 }
 
 .top-header {
     display: flex;
-    align-items: center;
-    text-align: center;
-    margin-top: 10px;
     padding: 5px;
+    margin-top: 30px;
 }
-
+.bottom-header{
+    margin-bottom: 20px;
+}
 .bottom-header p {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-large);
+    width: 100%;
+    
 }
 
 .logo {
@@ -83,21 +86,23 @@ header {
     text-align: center;
     text-decoration: none;
     color: var(--secondary-color);
+    line-height: 1;
 }
 
 .logo h1 {
     font-family: "Fascinate Inline", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: 2rem;
+    font-size: 3rem;
     text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.561);
+    width: 50%;
 }
 
 .logo h2 {
     font-family: "Pacifico", cursive;
     font-weight: 400;
     font-style: italic;
-    font-size: .9rem;
+    font-size: 2rem;
 }
 
 .motto {
@@ -117,7 +122,7 @@ header {
     position: absolute;
     cursor: pointer;
     z-index: 1000;
-    top: 25px;
+    top: 65px;
     right: 15px;
 }
 
@@ -146,10 +151,10 @@ header {
 /* Stiluri pentru meniul lateral */
 nav.menu {
     position: fixed;
-    top: 100px;
+    top: 150px;
     right: 0;
     width: 400px;
-    height: 100vh;
+    height: max-content;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     box-shadow: -2px 0 5px var(--shadow-color);
@@ -322,6 +327,9 @@ nav.menu ul li.active .submenu-icon {
         position: relative; /* Fixează meniul pe ecran */
         top: 0px;
 
+    }
+    .bottom-header p {
+        font-size: var(--font-size-base);
     }
 
 }

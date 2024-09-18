@@ -6,7 +6,7 @@
     --shadow-color: rgba(0, 0, 0, 0.7); /* Softer shadow for depth */
     --text-color: rgb(39, 39, 39); /* Primary text color */
     --text-secondary-color: #666666; /* Subtle, secondary text */
-    --button-color: rgb(255, 162, 0);
+    --button-color: rgb(255, 149, 0);
     
     /* Hover and Active */
     --hover-primary-color: #333333; /* For interactive elements */
@@ -251,7 +251,7 @@ nav.menu ul li.active .submenu-icon {
     color: var(--secondary-color);
 }
 .buton-container .fa-phone{
-    color: #000000;
+    color: #ffffff;
 }
 
 /* Footer fixat */
@@ -316,21 +316,62 @@ nav.menu ul li.active .submenu-icon {
 
 .ads img {
     max-width: 33%; /* Ajustează lățimea imaginilor pentru a se potrivi bine */
-    height: auto; /* Menține proporțiile imaginilor */
+    height: max-content; /* Menține proporțiile imaginilor */
     margin-bottom: 20px; /* Adaugă un spațiu între imagini */
+}
+.skills-container {
+    display:flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: fit-content;
+}
+.skill {
+    width: 30%; 
+    text-align: start;
+    font-size: .8rem;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.level {
+    position: relative;
+    height: 18px;
+    background-color:var(--button-color) ;
+    width: 0;
+    color: rgb(255, 255, 255);
+    transition: width 3s ease;
+}
+.level::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+.percentage {
+    position: absolute;
+    top: 10%;
+    right: 5px;
+    line-height: 15px;
+    font-size: .8rem;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    font-weight: bold; 
 }
 
 
 #rute {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     padding: 10px;
   }
   
   .ruta {
     flex: 1 1 calc(50% - 40px);
-    background-color: var(--secondary-color);
     box-shadow: 0 4px 8px var(--shadow-color);
     padding: 20px;
     border-radius: var(--border-radius);
@@ -339,9 +380,9 @@ nav.menu ul li.active .submenu-icon {
   }
   
   .ruta h3 {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-family: var(--font-main);
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 10px;
   }
   .ruta h4{
@@ -352,10 +393,11 @@ nav.menu ul li.active .submenu-icon {
   }
   
   .ruta p {
-    color: var(--text-secondary-color);
+    color: var(--secondary-color);
     margin-bottom: var(--spacing-medium);
     text-align: start;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
   }
   
   .buton-container {
@@ -364,7 +406,7 @@ nav.menu ul li.active .submenu-icon {
   
   .rezerva-button {
     background-color: var(--button-color);
-    color: var(--primary-color);
+    color: var(--secondary-color);
     border: none;
     padding: 10px 20px;
     border-radius: var(--border-radius);
@@ -377,6 +419,7 @@ nav.menu ul li.active .submenu-icon {
   .rezerva-button:hover {
     background-color: var(--hover-accent-color);
   }
+
   
   .buton-container ul {
     list-style: none;
@@ -389,11 +432,12 @@ nav.menu ul li.active .submenu-icon {
   
   .buton-container ul li {
     margin-bottom: var(--spacing-small);
+    
   }
   
   .buton-container ul li a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--secondary-color);
     display: flex;
     align-items: center;
   }
@@ -402,7 +446,32 @@ nav.menu ul li.active .submenu-icon {
     margin-right: 10px;
   }
   
+    #statistics {
+    padding: 50px;
+    text-align: center;
+    }
 
+    #statistics h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: var(--secondary-color);
+    }
+
+    .stat {
+        display: inline-block;
+        margin: 20px;
+    }
+
+    .number {
+        font-size: 3em;
+        color: var(--button-color);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .stat p {
+        font-size: 1.2em;
+        color: #ffffff;
+    }
 
 
 
@@ -465,12 +534,6 @@ nav.menu ul li.active .submenu-icon {
     }
     .ruta {
         flex: 1 1 calc(50% - 40px);
-        background-color: var(--secondary-color);
-        box-shadow: 0 4px 8px var(--shadow-color);
-        padding: 20px;
-        border-radius: var(--border-radius);
-        text-align: center;
-        margin: 10px;
       }
 
 }

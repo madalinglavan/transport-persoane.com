@@ -280,7 +280,6 @@ footer{
     display: flex;
     align-items: center; /* Centrează elementele orizontal */
     justify-content: center; /* Centrează elementele vertical */
-    padding: 20px; /* Adaugă padding pentru mai mult spațiu */
     box-sizing: border-box; /* Include padding și border în dimensiunea totală */
 }
 
@@ -288,7 +287,6 @@ footer{
 .ads img {
     max-width: 33%; /* Ajustează lățimea imaginilor pentru a se potrivi bine */
     height: max-content; /* Menține proporțiile imaginilor */
-    margin-bottom: 20px; /* Adaugă un spațiu între imagini */
 }
 .text-img-person, .text-img-pack, .text-img-platform {
     color: var(--secondary-color);
@@ -325,6 +323,8 @@ footer{
     gap: 10px;
     width: 100%;
     height: fit-content;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 .skill {
     width: 30%; 
@@ -367,7 +367,7 @@ footer{
 #rute {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 30px;
     padding: 10px;
   }
   
@@ -391,7 +391,7 @@ footer{
     color: var(--button-color);
     font-family: var(--font-main);
     font-size: 1.9rem;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
   .ruta-images {
     width: 100%;
@@ -468,32 +468,54 @@ footer{
     margin-right: 10px;
   }
   
-    #statistics {
+   /* Design implicit pentru ecrane mari */
+#statistics {
     padding: 20px;
     text-align: center;
+    margin-bottom: 150px;
+}
+
+#statistics h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.stat {
+    display: inline-block;
+    margin: 20px;
+}
+
+.number {
+    font-size: 3em;
+    color: var(--button-color);
+    transition: all 0.5s ease-in-out;
+}
+
+.stat p {
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+/* Adaptează designul pentru ecrane mici */
+@media (max-width: 768px) {
+    .stat {
+        display: block;
+        margin: 10px 0; /* Reduci margin pentru mai mult spațiu */
     }
 
     #statistics h2 {
-        font-size: 2em;
-        margin-bottom: 20px;
-        color: var(--secondary-color);
-    }
-
-    .stat {
-        display: inline-block;
-        margin: 20px;
+        font-size: 1.8em; /* Ajustezi dimensiunea fontului pentru titlu */
     }
 
     .number {
-        font-size: 3em;
-        color: var(--button-color);
-        transition: all 0.5s ease-in-out;
+        font-size: 2.5em; /* Reduci dimensiunea numărului */
     }
 
     .stat p {
-        font-size: 1.2em;
-        color: #ffffff;
+        font-size: 1em; /* Ajustezi fontul pentru descriere */
     }
+}
 
 
 
@@ -555,7 +577,9 @@ footer{
     }
     .ads img{
         min-width: 100%;
-        object-fit: contain;
+        object-fit: cover;
+        height: fit-content;
+        margin: 0;
     }
     .text-img-person, .text-img-pack, .text-img-platform {
         color: var(--secondary-color);
@@ -572,7 +596,7 @@ footer{
     }
     .text-img-pack{
         position: relative;
-        top: 150px;
+        top: 170px;
         display: flex;
         flex-direction: column;
     }
@@ -588,14 +612,19 @@ footer{
     #rute {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        gap: 10px;
+        gap: 50px;
         padding: 10px;
       }
       .ruta h3 {
         font-size: 2rem;
       }
       .ruta h4{
-        font-size: 1rem;
+        font-size: .9rem;
+      }
+      .ruta p{
+        min-width: 90%;
+        text-align:justify;
+        font-size: 1.1rem;
       }
       .ruta-images{
         width: 100%;

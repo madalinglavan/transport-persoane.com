@@ -79,8 +79,10 @@ header {
 .motto a{
     text-decoration: none;
     color: var(--secondary-color);
+    text-transform:uppercase;
 }
-.motto span {
+
+.motto p span {
     font-size: 1.8rem;
     font-family: "Protest Guerrilla", sans-serif;
     font-weight: 400;
@@ -121,7 +123,7 @@ nav.menu {
     top: 150px;
     right: 0;
     width: 400px;
-    height: max-content;
+    height: 100%;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     box-shadow: -2px 0 5px var(--shadow-color);
@@ -221,6 +223,9 @@ nav.menu ul li.active .submenu-icon {
 }
 
 /* Footer fixat */
+footer{
+    border-top: solid 1px #fff;
+}
 .fixed-footer {
     position: fixed;
     bottom: 0;
@@ -285,6 +290,35 @@ nav.menu ul li.active .submenu-icon {
     height: max-content; /* Menține proporțiile imaginilor */
     margin-bottom: 20px; /* Adaugă un spațiu între imagini */
 }
+.text-img-person, .text-img-pack, .text-img-platform {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+    background-color: #0000008f;
+    display: none;
+} 
+.text-img-person{
+    position: relative;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+.text-img-pack{
+    position: relative;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+.text-img-platform{
+    position: relative;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
 .skills-container {
     display:flex;
     justify-content: center;
@@ -331,8 +365,9 @@ nav.menu ul li.active .submenu-icon {
 
 
 #rute {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     padding: 10px;
   }
   
@@ -348,21 +383,32 @@ nav.menu ul li.active .submenu-icon {
   .ruta h3 {
     color: var(--secondary-color);
     font-family: var(--font-main);
-    font-size: 1.6rem;
+    font-size: 2.6rem;
     margin-bottom: 10px;
+    background-color: #00000036;
   }
   .ruta h4{
     color: var(--button-color);
     font-family: var(--font-main);
-    font-size: .9rem;
+    font-size: 1.9rem;
     margin-bottom: 10px;
+  }
+  .ruta-images {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 20vh;
+  }
+  .ruta-images img{
+    min-width: 20%;
+    margin: 10px;
   }
   
   .ruta p {
     color: var(--secondary-color);
     margin-bottom: var(--spacing-medium);
     text-align: start;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     line-height: 1.6;
   }
   
@@ -374,12 +420,13 @@ nav.menu ul li.active .submenu-icon {
     background-color: var(--button-color);
     color: var(--secondary-color);
     border: none;
-    padding: 10px 20px;
+    padding: 5px 15px;
     border-radius: var(--border-radius);
     cursor: pointer;
     font-size: large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-bottom: 20px;
+    
+    text-transform: uppercase;
   }
   
   .rezerva-button:hover {
@@ -389,16 +436,24 @@ nav.menu ul li.active .submenu-icon {
   
   .buton-container ul {
     list-style: none;
-    padding: 10px;
+    padding: 5px 15px;
     margin-top: var(--spacing-small);
     display: flex;
     width: 100%;
-    justify-content: space-around;
     filter: drop-shadow(1px 1px 15px rgb(255, 255, 255));
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    
   }
   
   .buton-container ul li {
     margin-bottom: var(--spacing-small);
+    border: solid 1px rgb(255, 255, 255);
+    padding: 10px 5px;
+    border-radius: 14px;
     
   }
   
@@ -414,7 +469,7 @@ nav.menu ul li.active .submenu-icon {
   }
   
     #statistics {
-    padding: 50px;
+    padding: 20px;
     text-align: center;
     }
 
@@ -485,16 +540,68 @@ nav.menu ul li.active .submenu-icon {
         width: 90%;
     }
     .motto p{
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
     .bottom-header p{
-        font-size: .8rem;
+        font-size: .9rem;
     }
     .submenu li a {
         font-size: .8rem;
     }
-    .ruta {
-        flex: 1 1 calc(50% - 40px);
-      }
 
+    .ads{
+        display: flex;
+        flex-direction: column;
+    }
+    .ads img{
+        min-width: 100%;
+        object-fit: contain;
+    }
+    .text-img-person, .text-img-pack, .text-img-platform {
+        color: var(--secondary-color);
+        font-size: 1.5rem;
+        text-align: center;
+        width: 100%;
+        background-color: #0000004d;
+    } 
+    .text-img-person{
+        position: relative;
+        top: 150px;
+        display: flex;
+        flex-direction: column;
+    }
+    .text-img-pack{
+        position: relative;
+        top: 150px;
+        display: flex;
+        flex-direction: column;
+    }
+    .text-img-platform{
+        position: relative;
+        top: 150px;
+        display: flex;
+        flex-direction: column;
+    }
+    .ruta p{
+        font-size: 1.3rem;
+    }
+    #rute {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        padding: 10px;
+      }
+      .ruta h3 {
+        font-size: 2rem;
+      }
+      .ruta h4{
+        font-size: 1rem;
+      }
+      .ruta-images{
+        width: 100%;
+      }
+      .ruta-images img{
+        width: 28%;
+      }
+    
 }
